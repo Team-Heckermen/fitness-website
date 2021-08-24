@@ -26,3 +26,6 @@ node_modules/
 
 # Virtual Environment
 venv/
+
+# VSCode Settings
+/.vscode
