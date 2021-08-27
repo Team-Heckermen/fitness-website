@@ -3,7 +3,7 @@ import logo from "../assets/images/logo.svg";
 // import userimg from "../assets/images/default_user_img.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-export default function Header(props) {
+export default function Navbar(props) {
   const is_logged_in = false;
   if (is_logged_in == true) {
     var sign_in_button;
