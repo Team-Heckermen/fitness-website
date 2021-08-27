@@ -5,9 +5,36 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default function Navbar(props) {
   const is_logged_in = false;
+  var discussion = <li>
+  <Link
+    to="/"
+    className=" rounded-md my-2 inline-block hover:bg-gray-700 no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
+  >
+    Discussions
+  </Link>
+  </li>
+
+  var home = <li>
+  <Link
+    to="/"
+    className=" rounded-md my-2 hover:bg-gray-700 inline-block no-underline hover:text-white bg-gray-800 p-1 text-gray-400 font-medium text-lg py-2 px-4 mr-6"
+  >
+    Home
+  </Link>
+  </li>
+  var settings = 
+  <li>
+    <Link
+      to="/"
+      className=" rounded-md my-2 inline-block hover:bg-gray-700 no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
+    >
+      Settings
+    </Link>
+  </li>
+
   if (is_logged_in == true) {
-    var sign_in_button;
-    var sign_up_button = (
+    var sign_in;
+    var sign_up = (
       <li className="absolute right-0">
         <Link
           to="/"
@@ -18,7 +45,7 @@ export default function Navbar(props) {
       </li>
     );
   } else {
-    var sign_in_button = (
+    var sign_in = (
       <li className="absolute right-24">
         <Link
           to="/"
@@ -28,7 +55,7 @@ export default function Navbar(props) {
         </Link>
       </li>
     );
-    var sign_up_button = (
+    var sign_up = (
       <li className="absolute right-0">
         <Link
           to="/"
@@ -49,33 +76,12 @@ export default function Navbar(props) {
             height="5%"
             width="5%"
           />
-          <li>
-            <Link
-              to="/"
-              className=" rounded-md my-2 hover:bg-gray-700 inline-block no-underline hover:text-white bg-gray-800 p-1 text-gray-400 font-medium text-lg py-2 px-4 mr-6"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/"
-              className=" rounded-md my-2 inline-block hover:bg-gray-700 no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
-            >
-              Discussions
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/"
-              className=" rounded-md my-2 inline-block hover:bg-gray-700 no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
-            >
-              Settings
-            </Link>
-          </li>
-          {sign_in_button}
+          {home}
+          {discussion}
+          {settings}
+          {sign_in}
           {/* <img src={userimg} className="inline-block mr-4 absolute right-0" height="4%" width="4%"/> */}
-          {sign_up_button}
+          {sign_up}
         </ul>
       </nav>
     </header>
