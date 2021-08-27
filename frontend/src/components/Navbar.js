@@ -9,7 +9,7 @@ export default function Navbar(props) {
   <li>
     <Link
       to="/"
-      className=" rounded-md my-2 inline-block hover:bg-gray-700 no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
+      className=" rounded-md my-2 inline-block hover:bg-gray-700 no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mr-6"
     >
       Home
     </Link>
@@ -19,7 +19,7 @@ export default function Navbar(props) {
   <li>
     <Link
       to="/"
-      className=" rounded-md my-2 inline-block hover:bg-gray-700 no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
+      className=" rounded-md my-2 inline-block hover:bg-gray-700 no-underline bg-gray-900 p-1 text-white hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mr-6"
     >
       Home
     </Link>
@@ -39,7 +39,7 @@ export default function Navbar(props) {
   <li>
     <Link
       to="/discussion"
-      className=" rounded-md my-2 inline-block hover:bg-gray-700 no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
+      className=" rounded-md my-2 inline-block hover:bg-gray-700 no-underline bg-gray-900 p-1 text-white hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
     >
       Discussions
     </Link>
@@ -59,7 +59,7 @@ export default function Navbar(props) {
   <li>
     <Link
     to="/settings"
-    className=" rounded-md my-2 inline-block hover:bg-gray-700 no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
+    className=" rounded-md my-2 inline-block hover:bg-gray-700 no-underline bg-gray-900 p-1 text-white hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
     >
       Settings
     </Link>
@@ -71,7 +71,7 @@ export default function Navbar(props) {
     var sign_up = (
       <li className="absolute right-0">
         <Link
-          to="/sign_up"
+          to="/profile"
           className=" rounded-md my-2 hover:bg-gray-700 inline-block no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
         >
           Profile
@@ -81,8 +81,8 @@ export default function Navbar(props) {
     var sign_up_open = (
       <li className="absolute right-0">
         <Link
-          to="/sign_up"
-          className=" rounded-md my-2 hover:bg-gray-700 inline-block no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
+          to="/profile"
+          className=" rounded-md my-2 hover:bg-gray-700 inline-block no-underline bg-gray-900 p-1 text-white hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
         >
           Profile
         </Link>
@@ -104,7 +104,7 @@ export default function Navbar(props) {
       <li className="absolute right-24">
         <Link
           to="/sign_in"
-          className=" rounded-md my-2 hover:bg-gray-700 inline-block no-underline hover:text-white bg-gray-800 p-1 text-gray-400 font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
+          className=" rounded-md my-2 hover:bg-gray-700 inline-block no-underline hover:text-white bg-gray-900 p-1 text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
         >
           Sign in
         </Link>
@@ -113,7 +113,7 @@ export default function Navbar(props) {
     var sign_up = (
       <li className="absolute right-0">
         <Link
-          to="/"
+          to="/sign_up"
           className=" rounded-md my-2 hover:bg-gray-700 inline-block no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
         >
           Sign up
@@ -123,8 +123,8 @@ export default function Navbar(props) {
     var sign_up_open = (
       <li className="absolute right-0">
         <Link
-          to="/"
-          className=" rounded-md my-2 hover:bg-gray-700 inline-block no-underline bg-gray-800 p-1 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
+          to="/sign_up"
+          className=" rounded-md my-2 hover:bg-gray-700 inline-block no-underline bg-gray-900 p-1 text-white hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
         >
           Sign up
         </Link>
@@ -140,6 +140,7 @@ export default function Navbar(props) {
                 src={logo}
                 height="5%"
                 width="5%"
+                className="mr-10"
               />
             <Switch>
             <Route exact path="/">
