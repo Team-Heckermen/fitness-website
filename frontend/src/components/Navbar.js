@@ -80,8 +80,8 @@ export default function Navbar(props) {
           {discussion}
           {settings}
           {sign_in}
-          {/* <img src={userimg} className="inline-block mr-4 absolute right-0" height="4%" width="4%"/> */}
           {sign_up}
+          {/* <img src={userimg} className="inline-block mr-4 absolute right-0" height="4%" width="4%"/> */}
         </ul>
       </nav>
     </header>
