@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/images/logo.svg";
+import search from "../assets/images/search_icon.svg";
 // import userimg from "../assets/images/default_user_img.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -179,6 +180,17 @@ export default function Navbar(props) {
               {sign_up_open}
             </Route>
           </Switch>
+          <div class="p-2 ml-20">
+            <div class="bg-white flex items-center rounded-full shadow-xl">
+              <input class="rounded-l-full w-full py-2 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="Search" />
+              
+              <div class="p-2 py-0">
+                <button class="bg-gray-800 text-white rounded-full p-1 hover:bg-gray-900 focus:outline-none w-6 h-6 flex items-center justify-center">
+                  <img src={search} height="100%" width="100%"/>
+                </button>
+              </div>
+            </div>
+          </div>
             {/* <img src={userimg} className="inline-block mr-4 absolute right-0" height="4%" width="4%"/> */}
           </ul>
         </nav>
