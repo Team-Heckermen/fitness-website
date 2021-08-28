@@ -141,7 +141,7 @@ export default function Navbar(props) {
                 src={logo}
                 height="5%"
                 width="5%"
-                className="mr-10"
+                className="mr-10 ml-4"
               />
             <Switch>
             <Route exact path="/">
