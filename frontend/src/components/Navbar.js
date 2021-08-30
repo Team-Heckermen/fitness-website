@@ -4,102 +4,71 @@ import search from "../assets/images/search_icon.svg";
 // import userimg from "../assets/images/default_user_img.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-var navigation = [
-  { num:0, name: 'Home', href: '/', current: true },
-  { num:1, name: 'Discussions', href: '/discussion', current: false },
-  { num:2, name: 'Settings', href: '/settings', current: false },
-]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-function Change_current_of(clicked_on){
-  navigation[0].current=false
-  console.log(navigation[clicked_on].current)
-}
-
-export default function Navbar(props) {
-  const is_logged_in = false;
-  var button_style=" rounded-md my-2 hover:bg-gray-700 inline-block no-underline bg-gray-800 text-gray-400 hover:text-white font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
-
-  if (is_logged_in == true) {
-    var sign_in;
-    var sign_up = (
-      <li className="absolute right-0">
-        <Link
-          to="/profile"
-          className={button_style}
-        >
-          Profile
-        </Link>
-      </li>
-    );
-  }
-  else {
-    var sign_in = (
-      <li className="absolute right-24">
-        <Link
-          to="/sign_in"
-          className={button_style}
-        >
-          Sign in
-        </Link>
-      </li>
-    );
-    var sign_up = (
-      <li className="absolute right-0">
-        <Link
-          to="/sign_up"
-          className={button_style}
-        >
-          Sign up
-        </Link>
-      </li>
-    );
-  }
+export const Navbar = () => {
   return (
-    <Router>
-      <header className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1">
-        <nav className="bg-gray-800 h-auto w-screen content-start">
-          <ul className="flow-root md:flex items-center text-base text-blue-600 pt-4 md:pt-0 w-screen space-x-3">
-              <img
-                src={logo}
-                height="5%"
-                width="5%"
-                className="mr-10 ml-4 py-2"
-              />
-              {navigation.map((item) => (
-                <Link
-                  onClick={() => Change_current_of(item.num)}
-                  key={item.name}
-                  to={item.href}
-                  className={classNames(
-                  item.current ? 'bg-gray-900 text-white' : "hover:bg-gray-700 bg-gray-800 text-gray-400 hover:text-white",
-                  "rounded-md my-2 inline-block no-underline font-medium text-lg py-2 px-4 lg:-ml-2 mx-6"
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </Link>
-              ))}
-              
-              <div className="p-2 ml-20">
-                <div className="bg-white flex items-center rounded-full shadow-xl">
-                  <input className="rounded-l-full w-full py-2 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="Search" />
-                  <div className="p-2 py-0">
-                    <button className="bg-gray-800 text-white rounded-full p-1 hover:bg-gray-900 focus:outline-none w-6 h-6 flex items-center justify-center">
-                      <img src={search} height="100%" width="100%"/>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            {/* <img src={userimg} className="inline-block mr-4 absolute right-0" height="4%" width="4%"/> */}
-            {sign_in}
-            {sign_up}
-          </ul>
-        </nav>
-      </header>
-    </Router>
+    <nav className="flex justify-between items-center h-16 bg-gray-900 text-white relative">
+      {/* Logo, home, discussion and settings button */}
+      <div className="flex">
+        <Link to="/">
+          <img src={logo} className="ml-4 py-2 w-11" />
+        </Link>
+        <div className="pr-8 md:block hidden my-2 mx-5">
+          <Link className="p-1" to="/">
+            <button class="bg-gray-900 hover:bg-gray-700 p-2 rounded-lg">
+              Home
+            </button>
+          </Link>
+          <Link className="p-1" to="/discussion">
+            <button class="bg-gray-900 hover:bg-gray-700 p-2 rounded-lg">
+              Discussion
+            </button>
+          </Link>
+          <Link className="p-1" to="/sign_in">
+            <button class="bg-gray-900 hover:bg-gray-700 p-2 rounded-lg">
+              Settings
+            </button>
+          </Link>
+        </div>
+        {/* Search Bar */}
+        <div className="bg-white flex items-center rounded-full my-2 mx-1">
+          <input
+            className="rounded-l-full py-1 px-2 md:px-3 text-gray-700 focus:outline-none"
+            id="search"
+            type="text"
+            placeholder="Search"
+          />
+          <div className="p-2 py-0">
+            <button className="bg-gray-800 text-white rounded-full p-1 hover:bg-gray-900 focus:outline-none w-6 h-6 flex items-center justify-center">
+              <img src={search} height="100%" width="100%" />
+            </button>
+          </div>
+        </div>
+      </div>
+      {/* Profile button */}
+      <div className="pr-8 md:block hidden">
+        <Link className="p-4" to="/profile">
+          <button class="bg-gray-900 hover:bg-gray-700 p-2 rounded-lg">
+            Profile
+          </button>
+        </Link>
+      </div>
+      {/* Button icon when the screen is small */}
+      <div className="px-4 cursor-pointer md:hidden">
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </div>
+    </nav>
   );
-}
+};
