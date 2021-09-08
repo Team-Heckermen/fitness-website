@@ -14,42 +14,44 @@ export const Navbar = () => {
         </Link>
         <div className="pr-8 md:block hidden my-2 mx-5">
           <Link className="p-1" to="/">
-            <button class="bg-gray-900 hover:bg-gray-700 p-2 rounded-lg">
-              Home
-            </button>
+            <button class="navbar-btn">Home</button>
           </Link>
           <Link className="p-1" to="/discussion">
-            <button class="bg-gray-900 hover:bg-gray-700 p-2 rounded-lg">
-              Discussion
-            </button>
+            <button class="navbar-btn">Discussion</button>
           </Link>
-          <Link className="p-1" to="/sign_in">
-            <button class="bg-gray-900 hover:bg-gray-700 p-2 rounded-lg">
-              Settings
-            </button>
+          <Link className="p-1" to="/settings">
+            <button class="navbar-btn">Settings</button>
           </Link>
         </div>
         {/* Search Bar */}
-        <div className="bg-white flex items-center rounded-full my-2 mx-1">
+        <div className="bg-white flex items-center rounded-full my-2">
           <input
-            className="rounded-l-full py-1 px-2 md:px-3 text-gray-700 focus:outline-none"
+            className="navbar-search-input"
             id="search"
             type="text"
             placeholder="Search"
           />
           <div className="p-2 py-0">
-            <button className="bg-gray-800 text-white rounded-full p-1 hover:bg-gray-900 focus:outline-none w-6 h-6 flex items-center justify-center">
+            <button className="navbar-search-btn">
               <img src={search} height="100%" width="100%" />
             </button>
           </div>
         </div>
       </div>
       {/* Profile button */}
-      <div className="pr-8 md:block hidden">
+      {/* <div className="pr-8 md:block hidden">
         <Link className="p-4" to="/profile">
-          <button class="bg-gray-900 hover:bg-gray-700 p-2 rounded-lg">
+          <button class="navbar-btn">
             Profile
           </button>
+        </Link>
+      </div> */}
+      <div className="pr-3 md:block hidden">
+        <Link to="/sign_in">
+          <button class="navbar-btn">Log In</button>
+        </Link>
+        <Link to="/sign_up">
+          <button class="navbar-btn">Sign Up</button>
         </Link>
       </div>
       {/* Button icon when the screen is small */}
