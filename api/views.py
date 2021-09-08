@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from api.models import Post
+from api.models import Post,  UserAccount
 from django.shortcuts import render
 from django.http import JsonResponse, response
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializers import PostSerializer
+from .serializers import PostSerializer,  UserCreateSerializer
 
 from .models import Post
 
