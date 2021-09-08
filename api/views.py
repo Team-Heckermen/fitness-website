@@ -13,16 +13,30 @@ from .models import Post
 def apiOverview(request):
     api_urls = {
         'List': '/post-list/',
-        'Detail': '/detail-view/<str:pk>/',
-        'Create': '/create-post/',
-        'Update': '/update-post/<str:pk>/',
-        'Delete': '/delete-post/<str:pk>/',
+        'Detail': '/post-detail/<str:pk>/',
+        'Create': '/post-create/',
+        'Update': '/post-update/<str:pk>/',
+        'Delete': '/post-delete/<str:pk>/',
     }
     return Response(api_urls)
 
 
 @api_view(['GET'])
 def postList(request):
-    posts = Post.objects.all()
-    serializer = PostSerializer(posts, many=True)
-    return Response(serializer.data)
+  posts = Post.objects.all()
+  serializer = PostSerializer(posts, many=True)
+  return Response(serializer.data)
+
+@api_view(['GET'])
+def postDetail(request, pk):
+  posts = Post.objects.get(id=pk)
+  serializer = PostSerializer(posts, many=False)
+  return Response(serializer.data)
+
+@api_view(['POST'])
+def postCreate(request):
+  serializer = PostSerializer(data=request.data)
+
+  if serializer.is_valid():
+    serializer.save()
+  return Response(serializer.data)
