@@ -6,20 +6,23 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import PostSerializer
 
+from .models import Post
+
+
 @api_view(['GET'])
 def apiOverview(request):
-  api_urls = {
-    'user_details' : '/user_details/',
+    api_urls = {
+        'List': '/post-list/',
+        'Detail': '/detail-view/<str:pk>/',
+        'Create': '/create-post/',
+        'Update': '/update-post/<str:pk>/',
+        'Delete': '/delete-post/<str:pk>/',
+    }
+    return Response(api_urls)
 
-    'List_Post' : '/list_post/',
-    'Detail_view_Post' : '/detail_view/<str:pk>/',
-    'Create_Post' : '/create_post/',
-    'Update_Post' : '/update_post/<str:pk>/',
-    'delete_Post' : '/delete_post/<str:pk>/',
-  }
-  return Response(api_urls)
 
-def List_post(request):
-  Posts = Post.objects.all()
-  serializer = PostSerializer(Posts, many=True)
-  return Response(serializer.data)
+@api_view(['GET'])
+def postList(request):
+    posts = Post.objects.all()
+    serializer = PostSerializer(posts, many=True)
+    return Response(serializer.data)
