@@ -11,7 +11,7 @@ export const Sign_up = (props) => {
             <label class="block font-semibold">Name</label>
             <input
               type="text"
-              placeholder="Jhon doe"
+              placeholder="John doe"
               class="sign-in-input"
             />
             <label class="block font-semibold">Email</label>
