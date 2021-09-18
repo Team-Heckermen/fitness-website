@@ -1,5 +1,3 @@
-from api.models import Post
-
 from django.shortcuts import render
 from django.http import JsonResponse, response
 
