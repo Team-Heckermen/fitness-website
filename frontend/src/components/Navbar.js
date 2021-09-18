@@ -6,11 +6,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center h-16 bg-gray-900 text-white relative">
+    <nav className="flex justify-between items-center h-16 bg-blue-900 text-white relative">
       {/* Logo, home, discussion and settings button */}
       <div className="flex">
         <Link to="/">
-          <img src={logo} className="ml-4 py-2 w-11" />
+          <img src={logo} className="ml-4 py-2 w-11 mr-0" />
         </Link>
         <div className="pr-8 md:block hidden my-2 mx-5">
           <Link className="p-1" to="/">
@@ -24,7 +24,7 @@ export const Navbar = () => {
           </Link>
         </div>
         {/* Search Bar */}
-        <div className="bg-white flex items-center rounded-full my-2">
+        <div className="bg-white flex items-center rounded-full my-auto mr-4 md:mr-0 ml-4 md:ml-0 w-2/3 h-2/3 md:h-auto md:w-auto">
           <input
             className="navbar-search-input"
             id="search"
@@ -47,15 +47,15 @@ export const Navbar = () => {
         </Link>
       </div> */}
       <div className="pr-3 md:block hidden">
-        <Link to="/sign_in">
+        <Link to="/sign_in"  className="p-1">
           <button class="navbar-btn">Log In</button>
         </Link>
-        <Link to="/sign_up">
+        <Link to="/sign_up"  className="p-1">
           <button class="navbar-btn">Sign Up</button>
         </Link>
       </div>
       {/* Button icon when the screen is small */}
-      <div className="px-4 cursor-pointer md:hidden">
+      <div className="pr-4 cursor-pointer block md:hidden">
         <svg
           class="w-6 h-6"
           fill="none"

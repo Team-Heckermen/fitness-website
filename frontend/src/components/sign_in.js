@@ -8,7 +8,7 @@ export const Sign_in = (props) => {
     <>
       <div className="flex">
         <div class="sign-in-container">
-          <div class="h-2 bg-pink-600 rounded-t-md"></div>
+          <div class="h-2 bg-blue-400 rounded-t-md"></div>
           <div class="px-8 py-6">
             <label class="block font-semibold">Email</label>
             <input
@@ -24,7 +24,7 @@ export const Sign_in = (props) => {
             />
             <div class="flex justify-between items-baseline">
               <button class="primary-btn">Login</button>
-              <Link to="/forgot-password" class="text-sm hover:bg-pink-100 ">
+              <Link to="/forgot-password" class="text-sm hover:bg-blue-300 ">
                 Forgot password?
               </Link>
             </div>
