@@ -1,6 +1,4 @@
 import React from "react";
-import search from "../assets/images/search_icon.svg";
-// import userimg from "../assets/images/default_user_img.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export const Sign_in = (props) => {
@@ -24,7 +22,7 @@ export const Sign_in = (props) => {
             />
             <div class="flex justify-between items-baseline">
               <button class="primary-btn">Login</button>
-              <Link to="/forgot-password" class="text-sm hover:bg-blue-300 ">
+              <Link to="/forgot-password" class="text-sm hover:text-blue-500 ">
                 Forgot password?
               </Link>
             </div>
