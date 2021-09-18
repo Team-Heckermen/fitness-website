@@ -1,0 +1,43 @@
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+export const Sign_up = (props) => {
+  return (
+    <>
+      <div className="flex">
+        <div class="sign-in-container">
+          <div class="h-2 bg-blue-400 rounded-t-md"></div>
+          <div class="px-8 py-6">
+            <label class="block font-semibold">Name</label>
+            <input
+              type="text"
+              placeholder="Jhon doe"
+              class="sign-in-input"
+            />
+            <label class="block font-semibold">Email</label>
+            <input
+              type="text"
+              placeholder="example@email.com"
+              class="sign-in-input"
+            />
+            <label class="block mt-3 font-semibold">Password</label>
+            <input
+              type="password"
+              placeholder="password123"
+              class="sign-in-input"
+            />
+            <label class="block mt-3 font-semibold">confirm password</label>
+            <input
+              type="password"
+              placeholder="password123"
+              class="sign-in-input"
+            />
+            <div class="flex justify-between items-baseline">
+              <button class="primary-btn">create account</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
