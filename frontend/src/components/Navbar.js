@@ -1,10 +1,32 @@
 import React from "react";
 import logo from "../assets/images/logo.png";
 import search from "../assets/images/search_icon.svg";
-// import userimg from "../assets/images/default_user_img.svg";
+import userimg from "../assets/images/default_user_img.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = (props) => {
+  var userstate = props.userstate;
+  if (userstate)
+  {
+    var sign_in_button
+    var sign_up_button = (
+    <Link className="p-4" to="/profile">
+      <button className="navbar-btn">
+        Profile
+      </button>
+    </Link>)
+  }
+  else
+  {
+    var sign_in_button = 
+    <Link to="/sign_in"  className="p-1">
+    <button className="navbar-btn">Log In</button>
+    </Link>
+    var sign_up_button = 
+    <Link to="/sign_up"  className="p-1 pr-1.5">
+      <button className="navbar-btn">Sign Up</button>
+    </Link>
+  }
   return (
     <div>
       <nav className="flex justify-between items-center h-16 text-black relative w-screen">
@@ -15,13 +37,13 @@ export const Navbar = () => {
           </Link>
           <div className="pr-8 md:block hidden my-2 mx-5">
             <Link className="p-1" to="/">
-              <button class="navbar-btn">Home</button>
+              <button className="navbar-btn">Home</button>
             </Link>
             <Link className="p-1" to="/discussion">
-              <button class="navbar-btn">Discussion</button>
+              <button className="navbar-btn">Discussion</button>
             </Link>
             <Link className="p-1" to="/settings">
-              <button class="navbar-btn">Settings</button>
+              <button className="navbar-btn">Settings</button>
             </Link>
           </div>
           {/* Search Bar */}
@@ -39,35 +61,23 @@ export const Navbar = () => {
             </div>
           </div>
         </div>
-        {/* Profile button */}
-        {/* <div className="pr-8 md:block hidden">
-          <Link className="p-4" to="/profile">
-            <button class="navbar-btn">
-              Profile
-            </button>
-          </Link>
-        </div> */}
         <div className="pr-3 md:block hidden">
-          <Link to="/sign_in"  className="p-1">
-            <button class="navbar-btn">Log In</button>
-          </Link>
-          <Link to="/sign_up"  className="p-1">
-            <button class="navbar-btn">Sign Up</button>
-          </Link>
+          {sign_in_button}
+          {sign_up_button}
         </div>
         {/* Button icon when the screen is small */}
         <div className="pr-4 cursor-pointer block md:hidden">
           <svg
-            class="w-6 h-6"
+            className="w-6 h-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M4 6h16M4 12h16M4 18h16"
             ></path>
           </svg>

@@ -1,39 +1,39 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-export const Sign_up = (props) => {
+export const Sign_up = () => {
   return (
     <>
       <div className="flex">
-        <div class="sign-in-container">
-          <div class="h-2 bg-blue-400 rounded-t-md"></div>
-          <div class="px-8 py-6">
-            <label class="block font-semibold">Name</label>
+        <div className="sign-in-container">
+          <div className="h-2 bg-blue-400 rounded-t-md"></div>
+          <div className="px-8 py-6">
+            <label className="block font-semibold">Name</label>
             <input
               type="text"
               placeholder="John doe"
-              class="sign-in-input"
+              className="sign-in-input"
             />
-            <label class="block font-semibold">Email</label>
+            <label className="block font-semibold">Email</label>
             <input
               type="text"
               placeholder="example@email.com"
-              class="sign-in-input"
+              className="sign-in-input"
             />
-            <label class="block mt-3 font-semibold">Password</label>
+            <label className="block mt-3 font-semibold">Password</label>
             <input
               type="password"
               placeholder="password123"
-              class="sign-in-input"
+              className="sign-in-input"
             />
-            <label class="block mt-3 font-semibold">confirm password</label>
+            <label className="block mt-3 font-semibold">confirm password</label>
             <input
               type="password"
               placeholder="password123"
-              class="sign-in-input"
+              className="sign-in-input"
             />
-            <div class="flex justify-between items-baseline">
-              <button class="primary-btn">create account</button>
+            <div className="flex justify-between items-baseline">
+              <button className="primary-btn">create account</button>
             </div>
           </div>
         </div>

@@ -10,28 +10,27 @@ var posts=[['date', 'post 1 heading', 'post 1 content', 'author'],
   ['date', 'post 3 heading', 'post 3 content', 'author'],
   ['date', 'post 4 heading', 'post 4 content', 'author'],
 ]
+var userstate = false
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        <Navbar userstate={userstate}/>
         <Switch>
-          <Route exact path="/">
+            <Route exact path="/">
+            </Route>
 
-          </Route>
+            <Route exact path="/discussion">
+              <Discussion_display posts={posts} />
+            </Route>
 
-          <Route exact path="/discussion">
-            <Discussion_display posts={posts} />
-          </Route>
-
-          <Route exact path="/sign_in">
-            <Sign_in />
-          </Route>
-          
-          <Route exact path="/sign_up">
-            <Sign_up />
-          </Route>
-
+            <Route exact path="/sign_in">
+              <Sign_in />
+            </Route>
+            
+            <Route exact path="/sign_up">
+              <Sign_up />
+            </Route>
         </Switch>
         <Footer />
       </Router>

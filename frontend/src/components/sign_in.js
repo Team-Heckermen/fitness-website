@@ -5,24 +5,24 @@ export const Sign_in = (props) => {
   return (
     <>
       <div className="flex">
-        <div class="sign-in-container">
-          <div class="h-2 bg-blue-400 rounded-t-md"></div>
-          <div class="px-8 py-6">
-            <label class="block font-semibold">Email</label>
+        <div className="sign-in-container">
+          <div className="h-2 bg-blue-400 rounded-t-md"></div>
+          <div className="px-8 py-6">
+            <label className="block font-semibold">Email</label>
             <input
               type="text"
               placeholder="example@email.com"
-              class="sign-in-input"
+              className="sign-in-input"
             />
-            <label class="block mt-3 font-semibold">Password</label>
+            <label className="block mt-3 font-semibold">Password</label>
             <input
               type="password"
               placeholder="password123"
-              class="sign-in-input"
+              className="sign-in-input"
             />
-            <div class="flex justify-between items-baseline">
-              <button class="primary-btn">Login</button>
-              <Link to="/forgot-password" class="text-sm hover:text-blue-500 ">
+            <div className="flex justify-between items-baseline">
+              <button className="primary-btn">Login</button>
+              <Link to="/forgot-password" className="text-sm hover:text-blue-500 ">
                 Forgot password?
               </Link>
             </div>
