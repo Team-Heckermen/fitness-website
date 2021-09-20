@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-export const Discussion_display = (props) => {
+export const DiscussionDisplay = (props) => {
   var posts = props.posts
   return (
     <>
