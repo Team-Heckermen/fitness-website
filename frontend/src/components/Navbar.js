@@ -6,26 +6,24 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export const Navbar = (props) => {
   var userstate = props.userstate;
-  if (userstate)
-  {
-    var sign_in_button
+  if (userstate) {
+    var sign_in_button;
     var sign_up_button = (
-    <Link className="p-4" to="/profile">
-      <button className="navbar-btn">
-        Profile
-      </button>
-    </Link>)
-  }
-  else
-  {
-    var sign_in_button = 
-    <Link to="/sign_in"  className="p-1">
-    <button className="navbar-btn">Log In</button>
-    </Link>
-    var sign_up_button = 
-    <Link to="/sign_up"  className="p-1 pr-1.5">
-      <button className="navbar-btn">Sign Up</button>
-    </Link>
+      <Link className="p-4" to="/profile">
+        <button className="navbar-btn">Profile</button>
+      </Link>
+    );
+  } else {
+    var sign_in_button = (
+      <Link to="/sign_in" className="p-1">
+        <button className="navbar-btn">Log In</button>
+      </Link>
+    );
+    var sign_up_button = (
+      <Link to="/sign_up" className="p-1 pr-1.5">
+        <button className="navbar-btn">Sign Up</button>
+      </Link>
+    );
   }
   return (
     <div>
@@ -66,7 +64,10 @@ export const Navbar = (props) => {
           {sign_up_button}
         </div>
         {/* Button icon when the screen is small */}
-        <div className="pr-4 cursor-pointer block md:hidden">
+        <div
+          className="pr-4 cursor-pointer block md:hidden"
+          onClick={props.toggle}
+        >
           <svg
             className="w-6 h-6"
             fill="none"
@@ -83,7 +84,7 @@ export const Navbar = (props) => {
           </svg>
         </div>
       </nav>
-      <hr className="w-95% mx-auto m-0 p-0 border-gray-500"/>
+      <hr className="w-95% mx-auto m-0 p-0 border-gray-500" />
     </div>
   );
 };
