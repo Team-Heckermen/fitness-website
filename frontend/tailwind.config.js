@@ -3,14 +3,17 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     borderWidth: {
-      '0.5': '0.5px',
+      0.5: "0.5px",
     },
     extend: {
       width: {
-        '90%': '90%',
-        '95%': '95%',
-        '98%': '98%,'
-      }
+        "90%": "90%",
+        "95%": "95%",
+        "98%": "98%,",
+      },
+    },
+    screens: {
+      md: "925px",
     },
   },
   variants: {

@@ -29,7 +29,7 @@ function App() {
   // close navbar when screen size is bigger than 768 px width
   useEffect(() => {
     const hideMenu = () => {
-      if (window.innerWidth > 768 && isOpen) {
+      if (window.innerWidth > 925 && isOpen) {
         setIsOpen(false);
       }
     };
