@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 export const DiscussionDisplay = (props) => {
   var posts = props.posts
   return (
-    <>
+    <div className="mt-5">
       {
         posts.map(post => (
           <div className="discussion-display-container w-90%">
@@ -17,6 +17,6 @@ export const DiscussionDisplay = (props) => {
           </div>
         ))
       }
-    </>
+    </div>
   );
 };

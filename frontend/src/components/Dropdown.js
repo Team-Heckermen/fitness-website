@@ -6,23 +6,36 @@ export const Dropdown = (props) => {
     <div
       className={
         props.isOpen
-          ? "grid grid-rows-4 text-center items-center bg-blue-400"
+          ? "text-center items-center"
           : "hidden"
       }
       onClick={props.toggle}
     >
-      <Link className="p-1" to="/">
-        Home
-      </Link>
-      <Link className="p-1" to="/discussion">
-        Discussion
-      </Link>
-      <Link className="p-1" to="/settings">
-        Settings
-      </Link>
-      <Link className="p-4" to="/profile">
-        Profile
-      </Link>
+      <div className="my-1.5 absolute w-full t-3 bg-white">
+        <Link className="p-1" to="/">
+          Home
+        </Link>
+
+        <hr className="my-1.5 w-90% mx-auto border-gray-500" />
+
+        <Link className="p-1" to="/discussion">
+          Discussion
+        </Link>
+
+        <hr className="my-1.5 w-90% mx-auto border-gray-500" />
+
+        <Link className="p-1" to="/settings">
+          Settings
+        </Link>
+
+        <hr className="my-1.5 w-90% mx-auto border-gray-500" />
+
+        <Link className="p-4" to="/profile">
+          Profile
+        </Link>
+        
+        <hr className="mt-1.5 w-95% mx-auto border-gray-700" />
+      </div>
     </div>
   );
 };
