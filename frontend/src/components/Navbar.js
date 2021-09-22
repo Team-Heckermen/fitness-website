@@ -84,7 +84,7 @@ export const Navbar = (props) => {
           </svg>
         </div>
       </nav>
-      <hr className="w-95% mx-auto m-0 p-0 border-gray-500" />
+      <hr className="w-95% mx-auto m-0 p-0 border-gray-500 mb-5" />
     </div>
   );
 };

@@ -20,7 +20,7 @@
 }
 
 .discussion-display-container {
-  @apply w-90% py-3 mx-auto my-10 bg-white rounded-xl shadow-md overflow-hidden;
+  @apply w-90% py-3 mx-auto mb-10 bg-white rounded-xl shadow-md overflow-hidden;
   position: block;
 }
 
