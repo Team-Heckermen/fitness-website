@@ -65,7 +65,7 @@ export const Navbar = (props) => {
         </div>
         {/* Button icon when the screen is small */}
         <div
-          className="pr-4 cursor-pointer block md:hidden"
+          className="mr-8 cursor-pointer block md:hidden"
           onClick={props.toggle}
         >
           <svg
