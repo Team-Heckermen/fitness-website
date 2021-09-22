@@ -32,3 +32,7 @@
 .primary-btn {
   @apply mt-4 bg-blue-400 text-white py-2 px-6 rounded-lg;
 }
+
+.search_bar {
+  @apply bg-white flex items-center rounded-full my-auto mr-4 md:mr-0 ml-4 md:ml-0 w-2/3 h-2/3 md:h-auto md:w-auto border-gray-400 border-solid border-0.5;
+}

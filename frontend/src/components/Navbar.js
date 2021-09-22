@@ -9,7 +9,7 @@ export const Navbar = (props) => {
   if (userstate) {
     var sign_in_button;
     var sign_up_button = (
-      <Link className="p-4" to="/profile">
+      <Link className="p-4 mr-4" to="/profile">
         <button className="navbar-btn">Profile</button>
       </Link>
     );
@@ -20,7 +20,7 @@ export const Navbar = (props) => {
       </Link>
     );
     var sign_up_button = (
-      <Link to="/sign_up" className="p-1 pr-1.5">
+      <Link to="/sign_up" className="p-1 mr-4">
         <button className="navbar-btn">Sign Up</button>
       </Link>
     );
@@ -29,8 +29,8 @@ export const Navbar = (props) => {
     <div>
       <nav className="flex justify-between items-center h-16 text-black relative w-screen">
         {/* Logo, home, discussion and settings button */}
-        <div className="flex">
-          <Link to="/">
+        <div className="flex items-center">
+          <Link to="/" className="ml-3">
             <img src={logo} className="ml-4 py-2 w-11 mr-0" />
           </Link>
           <div className="pr-8 md:block hidden my-2 mx-5">
@@ -45,7 +45,7 @@ export const Navbar = (props) => {
             </Link>
           </div>
           {/* Search Bar */}
-          <div className="bg-white flex items-center rounded-full my-auto mr-4 md:mr-0 ml-4 md:ml-0 w-2/3 h-2/3 md:h-auto md:w-auto border-gray-400 border-solid border-0.5">
+          <div className="search_bar">
             <input
               className="navbar-search-input"
               id="search"
