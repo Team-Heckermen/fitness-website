@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../actions/auth.js";
 
-export const Sign_in = ({ login }) => {
+const Sign_in = ({ login }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
