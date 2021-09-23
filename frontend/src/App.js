@@ -8,6 +8,9 @@ import { DiscussionDisplay } from "./components/discussion";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Dropdown } from "./components/Dropdown";
 
+import { Provider } from "react-redux";
+import store from "./store";
+
 // dummy data
 var posts = [
   ["date", "post 1 heading", "post 1 content", "author"],
@@ -40,27 +43,35 @@ function App() {
   });
   return (
     <>
-      <Router>
-        <Navbar toggle={toggle} userstate={userstate} />
-        <Dropdown isOpen={isOpen} toggle={toggle} />
-        <Switch>
-          <Route exact path="/"></Route>
+      <Provider store={store}>
+        <Router>
+          <Navbar toggle={toggle} userstate={userstate} />
+          <Dropdown isOpen={isOpen} toggle={toggle} />
+          <Switch>
+            <Route exact path="/"></Route>
 
-          <Route exact path="/discussion">
-            <DiscussionDisplay posts={posts} />
-          </Route>
+            <Route exact path="/discussion">
+              <DiscussionDisplay posts={posts} />
+            </Route>
 
-          <Route exact path="/sign_in">
-            <Sign_in />
-          </Route>
+            <Route exact path="/sign_in">
+              <Sign_in />
+            </Route>
 
-          <Route exact path="/sign_up">
-            <Sign_up />
-          </Route>
-        </Switch>
-        <div className="h-10"></div>
-        <Footer />
-      </Router>
+            <Route exact path="/sign_up">
+              <Sign_up />
+            </Route>
+
+            <Route exact path="/reset-password"></Route>
+
+            <Route exact path="/password/reset/confirm/:uid/:token"></Route>
+
+            <Route exact path="/activate/:uid/:token"></Route>
+          </Switch>
+          <div className="h-10"></div>
+          <Footer />
+        </Router>
+      </Provider>
     </>
   );
 }
