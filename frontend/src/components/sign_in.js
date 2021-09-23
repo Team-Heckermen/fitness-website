@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../actions/auth.js";
 
-const Sign_in = ({ login }) => {
+const Sign_in = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -20,8 +20,10 @@ const Sign_in = ({ login }) => {
     login(email, password);
   };
 
-  // is the user authenticated?
-  // redirect to hoeme page
+  // is the user authenticated? yes then redirect to homepage
+  if (isAuthenticated) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <>
@@ -68,8 +70,8 @@ const Sign_in = ({ login }) => {
   );
 };
 
-// const mapStateToProps = (state) => ({
-//   // isAuthenticated?
-// });
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
 
-export default connect(null, { login })(Sign_in);
+export default connect(mapStateToProps, { login })(Sign_in);

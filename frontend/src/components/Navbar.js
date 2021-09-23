@@ -4,7 +4,7 @@ import search from "../assets/images/search_icon.svg";
 import userimg from "../assets/images/default_user_img.svg";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-export const Navbar = (props) => {
+const Navbar = (props) => {
   var userstate = props.userstate;
   if (userstate) {
     var sign_in_button;
@@ -88,3 +88,5 @@ export const Navbar = (props) => {
     </div>
   );
 };
+
+export default Navbar;
