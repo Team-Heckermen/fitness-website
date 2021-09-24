@@ -44,13 +44,27 @@ function App() {
         <Router>
           <Layout>
             <Switch>
-              <Route exact path="/"></Route>
+              <Route exact path="/">
+                <title>Healthify</title>
+              </Route>
               <Route exact path="/discussion">
+                <title>Healthify - Discussions</title>
                 <DiscussionDisplay posts={posts} />
               </Route>
-              <Route exact path="/sign_in" component={Sign_in} />
-              <Route exact path="/sign_up" component={Sign_up} />
-              <Route exact path="/reset-password"></Route>
+              <Route exact path="/sign_in">
+                <title>Healthify - Sign in</title>
+                <Sign_in />
+              </Route>
+              <Route exact path="/sign_up">
+                <title>Healthify - Sign up</title>
+                <Sign_up />
+              </Route>
+              <Route exact path="/settings">
+                <title>Healthify - Settings</title>
+              </Route>
+              <Route exact path="/reset-password">
+                <title>Healthify - reset password</title>
+              </Route>
               <Route exact path="/password/reset/confirm/:uid/:token"></Route>
               <Route exact path="/activate/:uid/:token"></Route>
             </Switch>
