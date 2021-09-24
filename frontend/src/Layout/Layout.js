@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Dropdown } from "../components/Dropdown";
 import { checkAuthenticated, load_user } from "../actions/auth";
 
-const Layout = ({ checkAuthenticated, load_user, children }) => {
+const Layout = (props) => {
   // variable to track if navbar is open or not
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,9 +13,10 @@ const Layout = ({ checkAuthenticated, load_user, children }) => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
   useEffect(() => {
-    checkAuthenticated();
-    load_user();
+    props.checkAuthenticated();
+    props.load_user();
     const hideMenu = () => {
       if (window.innerWidth > 925 && isOpen) {
         setIsOpen(false);
@@ -29,9 +30,9 @@ const Layout = ({ checkAuthenticated, load_user, children }) => {
 
   return (
     <div>
-      <Navbar toggle={toggle} /> {children}
+      <Navbar toggle={toggle} />
       <Dropdown isOpen={isOpen} toggle={toggle} />
-      {children}
+      {props.children}
       <div className="h-10"></div>
       <Footer />
     </div>
