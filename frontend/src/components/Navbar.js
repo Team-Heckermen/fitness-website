@@ -34,7 +34,7 @@ const Navbar = ({ toggle, logout, isAuthenticated }) => {
   };
   return (
     <div>
-      <nav className="flex justify-between items-center h-16 text-black relative w-screen">
+      <nav className="flex justify-between items-center h-16 text-black relative">
         {/* Logo, home, discussion and settings button */}
         <div className="flex items-center">
           <Link to="/" className="ml-3">
