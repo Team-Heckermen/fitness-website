@@ -18,6 +18,14 @@ var posts = [
 ];
 
 function App() {
+  // variable to track if navbar is open or not
+  const [isOpen, setIsOpen] = useState(false);
+
+  // function to open or close navbar
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   // close navbar when screen size is bigger than 768 px width
   useEffect(() => {
     const hideMenu = () => {
