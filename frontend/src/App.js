@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Sign_in from "./components/sign_in";
 import { Sign_up } from "./components/sign_up";
+import ResetPassword from "./components/ResetPassword";
 import { DiscussionDisplay } from "./components/discussion";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Layout from "./Layout/Layout";
@@ -64,6 +65,7 @@ function App() {
               </Route>
               <Route exact path="/reset-password">
                 <title>Healthify - reset password</title>
+                <ResetPassword />
               </Route>
               <Route exact path="/password/reset/confirm/:uid/:token"></Route>
               <Route exact path="/activate/:uid/:token"></Route>
