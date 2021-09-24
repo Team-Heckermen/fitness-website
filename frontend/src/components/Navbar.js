@@ -2,29 +2,36 @@ import React from "react";
 import logo from "../assets/images/logo.png";
 import search from "../assets/images/search_icon.svg";
 import userimg from "../assets/images/default_user_img.svg";
+import { logout } from "../actions/auth";
+import { connect } from "react-redux";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-const Navbar = (props) => {
-  var userstate = props.userstate;
-  if (userstate) {
-    var sign_in_button;
-    var sign_up_button = (
-      <Link className="p-4 mr-4" to="/profile">
-        <button className="navbar-btn">Profile</button>
-      </Link>
-    );
-  } else {
-    var sign_in_button = (
+const Navbar = ({ toggle, logout, isAuthenticated }) => {
+  const guestLinks = () => (
+    <>
       <Link to="/sign_in" className="p-1">
         <button className="navbar-btn">Log In</button>
       </Link>
-    );
-    var sign_up_button = (
       <Link to="/sign_up" className="p-1 mr-4">
         <button className="navbar-btn">Sign Up</button>
       </Link>
-    );
-  }
+    </>
+  );
+
+  const authLinks = () => (
+    <>
+      <Link className="p-1" to="/profile">
+        <button className="navbar-btn">Profile</button>
+      </Link>
+      <Link className="p-1 mr-4" to="/logout" onClick={logout}>
+        <button className="navbar-btn">Logout</button>
+      </Link>
+    </>
+  );
+
+  const logoutHandler = () => {
+    logout();
+  };
   return (
     <div>
       <nav className="flex justify-between items-center h-16 text-black relative w-screen">
@@ -60,14 +67,10 @@ const Navbar = (props) => {
           </div>
         </div>
         <div className="pr-3 md:block hidden">
-          {sign_in_button}
-          {sign_up_button}
+          {isAuthenticated ? authLinks() : guestLinks()}
         </div>
         {/* Button icon when the screen is small */}
-        <div
-          className="mr-8 cursor-pointer block md:hidden"
-          onClick={props.toggle}
-        >
+        <div className="mr-8 cursor-pointer block md:hidden" onClick={toggle}>
           <svg
             className="w-6 h-6"
             fill="none"
@@ -89,4 +92,8 @@ const Navbar = (props) => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { logout })(Navbar);
