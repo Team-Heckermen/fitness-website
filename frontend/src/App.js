@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Sign_in from "./components/sign_in";
 import { Sign_up } from "./components/sign_up";
+import { Footer } from "./components/Footer";
 import ResetPassword from "./components/ResetPassword";
 import { DiscussionDisplay } from "./components/discussion";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Layout from "./Layout/Layout";
 
 import { Provider } from "react-redux";
@@ -22,11 +23,6 @@ function App() {
   // variable to track if navbar is open or not
   const [isOpen, setIsOpen] = useState(false);
 
-  // function to open or close navbar
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
-
   // close navbar when screen size is bigger than 768 px width
   useEffect(() => {
     const hideMenu = () => {
@@ -43,34 +39,38 @@ function App() {
     <>
       <Provider store={store}>
         <Router>
+          <div className="flex flex-col justify-between min-h-screen ">
           <Layout>
-            <Switch>
-              <Route exact path="/">
-                <title>Healthify</title>
-              </Route>
-              <Route exact path="/discussion">
-                <title>Healthify - Discussions</title>
-                <DiscussionDisplay posts={posts} />
-              </Route>
-              <Route exact path="/sign_in">
-                <title>Healthify - Sign in</title>
-                <Sign_in />
-              </Route>
-              <Route exact path="/sign_up">
-                <title>Healthify - Sign up</title>
-                <Sign_up />
-              </Route>
-              <Route exact path="/settings">
-                <title>Healthify - Settings</title>
-              </Route>
-              <Route exact path="/reset-password">
-                <title>Healthify - reset password</title>
-                <ResetPassword />
-              </Route>
-              <Route exact path="/password/reset/confirm/:uid/:token"></Route>
-              <Route exact path="/activate/:uid/:token"></Route>
-            </Switch>
+              <link rel="icon" href="assets/images/logo.png" />
+              <Switch>
+                <Route exact path="/">
+                  <title>Healthify</title>
+                </Route>
+                <Route exact path="/discussion">
+                  <title>Healthify - Discussions</title>
+                  <DiscussionDisplay posts={posts} />
+                </Route>
+                <Route exact path="/sign_in">
+                  <title>Healthify - Sign in</title>
+                  <Sign_in />
+                </Route>
+                <Route exact path="/sign_up">
+                  <title>Healthify - Sign up</title>
+                  <Sign_up />
+                </Route>
+                <Route exact path="/settings">
+                  <title>Healthify - Settings</title>
+                </Route>
+                <Route exact path="/reset-password">
+                  <title>Healthify - reset password</title>
+                  <ResetPassword />
+                </Route>
+                <Route exact path="/password/reset/confirm/:uid/:token"></Route>
+                <Route exact path="/activate/:uid/:token"></Route>
+              </Switch>
           </Layout>
+          <Footer />
+          </div>
         </Router>
       </Provider>
     </>
