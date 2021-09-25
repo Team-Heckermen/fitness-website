@@ -3,6 +3,7 @@ import "./App.css";
 import Sign_in from "./components/sign_in";
 import { Sign_up } from "./components/sign_up";
 import { Footer } from "./components/Footer";
+import { Message } from "./components/message";
 import ResetPassword from "./components/ResetPassword";
 import { DiscussionDisplay } from "./components/discussion";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
@@ -35,13 +36,17 @@ function App() {
       window.removeEventListener("resize", hideMenu);
     };
   });
+
+  var MessageBgColor="bg-green-600"
+  var message="logged out successfully"
   return (
     <>
       <Provider store={store}>
         <Router>
           <div className="flex flex-col justify-between min-h-screen ">
-          <Layout>
+            <Layout>
               <link rel="icon" href="assets/images/logo.png" />
+              <Message BgBolor={MessageBgColor} message={message}/>
               <Switch>
                 <Route exact path="/">
                   <title>Healthify</title>
@@ -68,8 +73,8 @@ function App() {
                 <Route exact path="/password/reset/confirm/:uid/:token"></Route>
                 <Route exact path="/activate/:uid/:token"></Route>
               </Switch>
-          </Layout>
-          <Footer />
+            </Layout>
+            <Footer />
           </div>
         </Router>
       </Provider>
