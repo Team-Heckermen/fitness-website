@@ -5,8 +5,9 @@ import { Sign_up } from "./components/sign_up";
 import { Footer } from "./components/Footer";
 import { Message } from "./components/message";
 import ResetPassword from "./components/ResetPassword";
+import ResetPasswordConfirm from "./components/ResetPasswordConfirm";
 import { DiscussionDisplay } from "./components/discussion";
-import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Layout from "./Layout/Layout";
 
 import { Provider } from "react-redux";
@@ -37,41 +38,33 @@ function App() {
     };
   });
 
-  var MessageBgColor="bg-green-600"
-  var message="logged out successfully"
+  var MessageBgColor = "bg-green-600";
+  var message = "logged out successfully";
   return (
     <>
+      <title>Healthify</title>
       <Provider store={store}>
         <Router>
           <div className="flex flex-col justify-between min-h-screen ">
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />
-              <Message BgBolor={MessageBgColor} message={message}/>
+              <Message BgBolor={MessageBgColor} message={message} />
               <Switch>
-                <Route exact path="/">
-                  <title>Healthify</title>
-                </Route>
+                <Route exact path="/" />
                 <Route exact path="/discussion">
                   <title>Healthify - Discussions</title>
                   <DiscussionDisplay posts={posts} />
                 </Route>
-                <Route exact path="/sign_in">
-                  <title>Healthify - Sign in</title>
-                  <Sign_in />
-                </Route>
-                <Route exact path="/sign_up">
-                  <title>Healthify - Sign up</title>
-                  <Sign_up />
-                </Route>
-                <Route exact path="/settings">
-                  <title>Healthify - Settings</title>
-                </Route>
-                <Route exact path="/reset-password">
-                  <title>Healthify - reset password</title>
-                  <ResetPassword />
-                </Route>
-                <Route exact path="/password/reset/confirm/:uid/:token"></Route>
-                <Route exact path="/activate/:uid/:token"></Route>
+                <Route exact path="/sign_in" component={Sign_in} />
+                <Route exact path="/sign_up" component={Sign_up} />
+                <Route exact path="/settings" />
+                <Route exact path="/reset-password" component={ResetPassword} />
+                <Route
+                  exact
+                  path="/password/reset/confirm/:uid/:token"
+                  component={ResetPasswordConfirm}
+                />
+                <Route exact path="/activate/:uid/:token" />
               </Switch>
             </Layout>
             <Footer />
