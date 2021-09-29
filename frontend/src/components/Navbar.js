@@ -23,7 +23,7 @@ const Navbar = ({ toggle, logout, isAuthenticated }) => {
       <Link className="p-1" to="/profile">
         <button className="navbar-btn">Profile</button>
       </Link>
-      <Link className="p-1 mr-4" to="/logout" onClick={logout}>
+      <Link className="p-1 mr-4" to="/logout" onClick={logoutHandler}>
         <button className="navbar-btn">Logout</button>
       </Link>
     </>
