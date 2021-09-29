@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Sign_in from "./components/sign_in";
-import { Sign_up } from "./components/sign_up";
+import {Sign_up} from "./components/sign_up";
 import { Footer } from "./components/Footer";
 import { Message } from "./components/message";
 import ResetPassword from "./components/ResetPassword";
@@ -38,8 +38,8 @@ function App() {
     };
   });
 
-  var MessageBgColor = "bg-green-600";
-  var message = "logged out successfully";
+  var message = ""
+  var message_bol = false
   return (
     <>
       <title>Healthify</title>
@@ -48,11 +48,10 @@ function App() {
           <div className="flex flex-col justify-between min-h-screen ">
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />
-              <Message BgBolor={MessageBgColor} message={message} />
+              <Message message={message} message_bol={message_bol} />
               <Switch>
                 <Route exact path="/" />
                 <Route exact path="/discussion">
-                  <title>Healthify - Discussions</title>
                   <DiscussionDisplay posts={posts} />
                 </Route>
                 <Route exact path="/sign_in" component={Sign_in} />
