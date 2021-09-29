@@ -38,8 +38,8 @@ function App() {
     };
   });
 
-  var message = ""
-  var message_bol = false
+  var message
+
   return (
     <>
       <title>Healthify</title>
@@ -48,7 +48,7 @@ function App() {
           <div className="flex flex-col justify-between min-h-screen ">
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />
-              <Message message={message} message_bol={message_bol} />
+              <Message message={message} />
               <Switch>
                 <Route exact path="/" />
                 <Route exact path="/discussion">
