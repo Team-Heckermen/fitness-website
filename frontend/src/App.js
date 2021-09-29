@@ -3,7 +3,6 @@ import "./App.css";
 import Sign_in from "./components/sign_in";
 import {Sign_up} from "./components/sign_up";
 import { Footer } from "./components/Footer";
-import { Message } from "./components/message";
 import ResetPassword from "./components/ResetPassword";
 import ResetPasswordConfirm from "./components/ResetPasswordConfirm";
 import { DiscussionDisplay } from "./components/discussion";
@@ -37,9 +36,6 @@ function App() {
       window.removeEventListener("resize", hideMenu);
     };
   });
-
-  var message
-
   return (
     <>
       <title>Healthify</title>
@@ -48,7 +44,6 @@ function App() {
           <div className="flex flex-col justify-between min-h-screen ">
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />
-              <Message message={message} />
               <Switch>
                 <Route exact path="/" />
                 <Route exact path="/discussion">
