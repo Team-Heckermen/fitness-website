@@ -65,7 +65,6 @@ function App() {
                 />
               </Switch>
             </Layout>
-            <Footer />
           </div>
         </Router>
       </Provider>
