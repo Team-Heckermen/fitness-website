@@ -26,6 +26,7 @@ const ResetPasswordConfirm = ({ match, reset_password_confirm }) => {
   };
 
   if (requestSent) {
+    <TopMessage message="Password changed successfully!" />
     return <Redirect to="/" />;
   }
 

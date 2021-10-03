@@ -45,7 +45,8 @@ function App() {
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />
               <Switch>
-                <Route exact path="/" />
+                <Route exact path="/" >
+                </Route>
                 <Route exact path="/discussion">
                   <DiscussionDisplay posts={posts} />
                 </Route>

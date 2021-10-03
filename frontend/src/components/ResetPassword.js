@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { reset_password } from "../actions/auth.js";
+import { TopMessage } from "./message.js";
 
 const ResetPassword = ({ reset_password }) => {
   const [requestSent, setRequestSent] = useState(false);
@@ -23,7 +24,12 @@ const ResetPassword = ({ reset_password }) => {
 
   // is the user authenticated? yes then redirect to homepage
   if (requestSent) {
-    return <Redirect to="/" />;
+    return( 
+      <>
+        <TopMessage message="An email has been sent to you for changing your password" />
+        <Redirect to="/sign_up" />
+      </>
+    );
   }
 
   return (
