@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Sign_in from "./components/sign_in";
-import {Sign_up} from "./components/sign_up";
+import Sign_up from "./components/sign_up";
 import { Footer } from "./components/Footer";
 import ResetPassword from "./components/ResetPassword";
 import ResetPasswordConfirm from "./components/ResetPasswordConfirm";
-import { DiscussionDisplay } from "./components/discussion";
+import Activate from "./components/Activate";
+import { DiscussionDisplay } from "./components/Discussion";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Layout from "./Layout/Layout";
-
 import { Provider } from "react-redux";
 import store from "./store";
 
@@ -45,8 +45,7 @@ function App() {
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />
               <Switch>
-                <Route exact path="/" >
-                </Route>
+                <Route exact path="/"></Route>
                 <Route exact path="/discussion">
                   <DiscussionDisplay posts={posts} />
                 </Route>
@@ -59,7 +58,11 @@ function App() {
                   path="/password/reset/confirm/:uid/:token"
                   component={ResetPasswordConfirm}
                 />
-                <Route exact path="/activate/:uid/:token" />
+                <Route
+                  exact
+                  path="/activate/:uid/:token"
+                  component={Activate}
+                />
               </Switch>
             </Layout>
             <Footer />

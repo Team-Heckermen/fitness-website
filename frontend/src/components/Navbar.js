@@ -5,7 +5,7 @@ import userimg from "../assets/images/default_user_img.svg";
 import { TopMessage } from "./message";
 import { logout } from "../actions/auth";
 import { connect } from "react-redux";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ toggle, logout, isAuthenticated }) => {
   const guestLinks = () => (
