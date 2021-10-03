@@ -25,10 +25,14 @@ const ResetPasswordConfirm = ({ match, reset_password_confirm }) => {
     setRequestSent(true);
   };
 
-  if (requestSent) {
-    <TopMessage message="Password changed successfully!" />
-    return <Redirect to="/" />;
-  }
+  if (requestSent) { 
+    return( 
+    <>
+      <TopMessage message="Password changed successfully!" />
+        <Redirect to="/sign_in" />
+    </>
+    );
+}
 
   return (
     <div className="flex">

@@ -27,7 +27,7 @@ const ResetPassword = ({ reset_password }) => {
     return( 
       <>
         <TopMessage message="An email has been sent to you for changing your password" />
-        <Redirect to="/sign_up" />
+        <Redirect to="/sign_in" />
       </>
     );
   }
