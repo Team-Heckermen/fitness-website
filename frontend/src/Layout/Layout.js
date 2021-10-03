@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import { Footer } from "../components/Footer";
 import { connect } from "react-redux";
 import { Dropdown } from "../components/Dropdown";
 import { checkAuthenticated, load_user } from "../actions/auth";
