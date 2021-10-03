@@ -1,23 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import cross from "../assets/images/cross.svg";
 
 export const TopMessage = (props) => {
-  var divstyle="bottom-10 pb-24 ml-5 fixed w-1/4 rounded-lg bg-blue-700"
-  function hideMesage()
-  {
-    divstyle="hidden "+divstyle
-  }
-  if(props.message != null)
-  {
+  const [Open, setOpen] = useState(true);
+
+  const toggle = () => {
+    setOpen(!Open);
+  };
+
     return (
-      <div className={divstyle}>
-        <p className="pt-3 text-sm ml-3 text-white">{props.message}</p>
-        <button onClick={hideMesage}><img src={cross} /></button>
+      <div className={
+        Open
+          ? "message-box inset-x-5%"
+          : "hidden"
+      }>
+        <p className="py-3 text-sm ml-3 text-white w-80%">{props.message}</p>
+        <img src={cross} className="absolute right-4 top-3 md:top-4 md:w-3%" onClick={toggle} />
       </div>
     );
-  }
-  else
-  {
-    return(<></>);
-  }
 };
