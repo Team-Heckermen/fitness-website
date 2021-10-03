@@ -33,7 +33,6 @@ const Layout = (props) => {
       <Navbar toggle={toggle} />
       <Dropdown isOpen={isOpen} toggle={toggle} />
       {props.children}
-      <Footer />
     </div>
   );
 };
