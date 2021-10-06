@@ -6,7 +6,6 @@ import { TopMessage } from "./message";
 import { logout } from "../actions/auth";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-
 const Navbar = ({ toggle, logout, isAuthenticated }) => {
   const guestLinks = () => (
     <>
@@ -21,10 +20,10 @@ const Navbar = ({ toggle, logout, isAuthenticated }) => {
 
   const authLinks = () => (
     <>
-      <Link className="p-1" to="/profile">
+      <Link className="navbar-link" to="/profile">
         <button className="navbar-btn">Profile</button>
       </Link>
-      <Link className="p-1 mr-4" to="/logout" onClick={logoutHandler}>
+      <Link className="navbar-link mr-4" to="/logout" onClick={logoutHandler}>
         <button className="navbar-btn">Logout</button>
       </Link>
     </>
@@ -42,13 +41,13 @@ const Navbar = ({ toggle, logout, isAuthenticated }) => {
             <img src={logo} className="ml-4 py-2 w-11 mr-0" />
           </Link>
           <div className="pr-8 md:block hidden my-2 mx-5">
-            <Link className="p-1" to="/">
+            <Link className="navbar-link" to="/">
               <button className="navbar-btn">Home</button>
             </Link>
-            <Link className="p-1" to="/discussion">
+            <Link className="navbar-link" to="/discussion">
               <button className="navbar-btn">Discussion</button>
             </Link>
-            <Link className="p-1" to="/settings">
+            <Link className="navbar-link" to="/settings">
               <button className="navbar-btn">Settings</button>
             </Link>
           </div>

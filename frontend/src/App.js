@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import { Provider } from "react-redux";
 import store from "./store";
+import Preloader from "./components/preloader";
 
 // dummy data
 var posts = [
@@ -38,6 +39,7 @@ function App() {
   });
   return (
     <>
+    <Preloader />
       <title>Healthify</title>
       <Provider store={store}>
         <Router>
