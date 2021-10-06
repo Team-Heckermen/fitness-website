@@ -1,9 +1,5 @@
 :root{
-  --gradient:#009688;
-}
-
-.navbar-btn {
-  @apply bg-white pt-2 rounded-lg px-4;
+  --gradient: rgb(96, 165, 250);
 }
 
 .navbar-search-input {
@@ -45,24 +41,29 @@
   @apply bg-white flex items-center rounded-full my-auto mr-4 md:mr-0 ml-4 md:ml-0 w-2/3 h-2/3 md:h-auto md:w-auto border-gray-400 border-solid border-0.5;
 }
 
-.navbar-btn:hover, .navbar-link-active{
-  color:#009688; 
-  color:var(--gradient);  
+.underline-btn:hover{
+  color:var(--gradient);
 }
 
-.navbar-btn{
+.underline-btn{
   transition: all ease-in-out 250ms;
 }
 
-.navbar-btn:hover::after, .navbar-link-active {
+.underline-btn:hover::after{
   width: 100%;
 }
 
-.navbar-btn::after, .navbar-link-active {
+.underline-btn {
+  @apply bg-white rounded-lg px-4;
+  margin-top: 19px;
+}
+
+.underline-btn::after{
+  @apply mx-auto;
+  margin-top: 12px;
   content: '';
   display:flex;
   height: 5px;
-  border-radius: .5rem;
   background-color: var(--gradient);
   width: 0%;
 
