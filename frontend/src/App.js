@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import { Provider } from "react-redux";
 import store from "./store";
-import Preloader from "./components/preloader";
+import Page404 from "./components/404message";
 
 // dummy data
 var posts = [
@@ -39,7 +39,6 @@ function App() {
   });
   return (
     <>
-    <Preloader />
       <title>Healthify</title>
       <Provider store={store}>
         <Router>
@@ -47,7 +46,7 @@ function App() {
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />
               <Switch>
-                <Route exact path="/"></Route>
+                <Route exact path="/"><Page404 /></Route>
                 <Route exact path="/discussion">
                   <DiscussionDisplay posts={posts} />
                 </Route>
