@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/images/logo.png";
 import search from "../assets/images/search_icon.svg";
 import userimg from "../assets/images/default_user_img.svg";
 import { TopMessage } from "./message";
 import { logout } from "../actions/auth";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 const Navbar = ({ toggle, logout, isAuthenticated }) => {
+  const [redirect, setRedirect] = useState(false);
+
   const guestLinks = () => (
     <>
       <Link to="/sign_in" className="p-1">
@@ -23,7 +25,7 @@ const Navbar = ({ toggle, logout, isAuthenticated }) => {
       <Link className="navbar-link" to="/profile">
         <button className="underline-btn">Profile</button>
       </Link>
-      <Link className="navbar-link mr-4" to="/logout" onClick={logoutHandler}>
+      <Link className="navbar-link mr-4" to="/" onClick={logoutHandler}>
         <button className="underline-btn">Logout</button>
       </Link>
     </>
@@ -31,6 +33,7 @@ const Navbar = ({ toggle, logout, isAuthenticated }) => {
 
   const logoutHandler = () => {
     logout();
+    setRedirect(true);
   };
   return (
     <div>
@@ -88,6 +91,7 @@ const Navbar = ({ toggle, logout, isAuthenticated }) => {
         </div>
       </nav>
       <hr className="w-95% mx-auto m-0 p-0 border-gray-700" />
+      {redirect ? <Redirect to="/" /> : <></>}
     </div>
   );
 };

@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import { Provider } from "react-redux";
 import store from "./store";
-import Page404 from "./components/404message";
+import PageNotFound from "./components/PageNotFound";
 
 // dummy data
 var posts = [
@@ -46,7 +46,8 @@ function App() {
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />
               <Switch>
-                <Route exact path="/"></Route>
+                {/* Normal Pages */}
+                <Route exact path="/" />
                 <Route exact path="/discussion">
                   <DiscussionDisplay posts={posts} />
                 </Route>
@@ -64,7 +65,8 @@ function App() {
                   path="/activate/:uid/:token"
                   component={Activate}
                 />
-                <Route path='*' component={Page404} />
+                {/* Error Pages */}
+                <Route component={PageNotFound} />
               </Switch>
             </Layout>
             <Footer />
