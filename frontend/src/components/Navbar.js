@@ -6,26 +6,25 @@ import { TopMessage } from "./message";
 import { logout } from "../actions/auth";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
-
 const Navbar = ({ toggle, logout, isAuthenticated }) => {
   const guestLinks = () => (
     <>
       <Link to="/sign_in" className="p-1">
-        <button className="navbar-btn">Log In</button>
+        <button className="underline-btn">Log In</button>
       </Link>
       <Link to="/sign_up" className="p-1 mr-4">
-        <button className="navbar-btn">Sign Up</button>
+        <button className="underline-btn">Sign Up</button>
       </Link>
     </>
   );
 
   const authLinks = () => (
     <>
-      <Link className="p-1" to="/profile">
-        <button className="navbar-btn">Profile</button>
+      <Link className="navbar-link" to="/profile">
+        <button className="underline-btn">Profile</button>
       </Link>
-      <Link className="p-1 mr-4" to="/logout" onClick={logoutHandler}>
-        <button className="navbar-btn">Logout</button>
+      <Link className="navbar-link mr-4" to="/logout" onClick={logoutHandler}>
+        <button className="underline-btn">Logout</button>
       </Link>
     </>
   );
@@ -36,21 +35,21 @@ const Navbar = ({ toggle, logout, isAuthenticated }) => {
   };
   return (
     <div>
-      <nav className="flex justify-between items-center h-16 text-black relative">
+      <nav className="flex justify-between items-center h-14 text-black relative">
         {/* Logo, home, discussion and settings button */}
         <div className="flex items-center">
           <Link to="/" className="ml-3">
             <img src={logo} className="ml-4 py-2 w-11 mr-0" />
           </Link>
           <div className="pr-8 md:block hidden my-2 mx-5">
-            <Link className="p-1" to="/">
-              <button className="navbar-btn">Home</button>
+            <Link className="navbar-link" to="/">
+              <button className="underline-btn">Home</button>
             </Link>
-            <Link className="p-1" to="/discussion">
-              <button className="navbar-btn">Discussion</button>
+            <Link className="navbar-link" to="/discussion">
+              <button className="underline-btn">Discussion</button>
             </Link>
-            <Link className="p-1" to="/settings">
-              <button className="navbar-btn">Settings</button>
+            <Link className="navbar-link" to="/settings">
+              <button className="underline-btn">Settings</button>
             </Link>
           </div>
           {/* Search Bar */}
@@ -89,7 +88,7 @@ const Navbar = ({ toggle, logout, isAuthenticated }) => {
           </svg>
         </div>
       </nav>
-      <hr className="w-95% mx-auto m-0 p-0 border-gray-500" />
+      <hr className="w-95% mx-auto m-0 p-0 border-gray-700" />
     </div>
   );
 };

@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import { Provider } from "react-redux";
 import store from "./store";
+import Page404 from "./components/404message";
 
 // dummy data
 var posts = [
@@ -63,6 +64,7 @@ function App() {
                   path="/activate/:uid/:token"
                   component={Activate}
                 />
+                <Route path='*' component={Page404} />
               </Switch>
             </Layout>
             <Footer />
