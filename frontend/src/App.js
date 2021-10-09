@@ -46,7 +46,7 @@ function App() {
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />
               <Switch>
-                <Route exact path="/"><Page404 /></Route>
+                <Route exact path="/"></Route>
                 <Route exact path="/discussion">
                   <DiscussionDisplay posts={posts} />
                 </Route>
@@ -64,6 +64,7 @@ function App() {
                   path="/activate/:uid/:token"
                   component={Activate}
                 />
+                <Route path='*' component={Page404} />
               </Switch>
             </Layout>
             <Footer />
