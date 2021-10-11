@@ -26,7 +26,7 @@ const ResetPassword = ({ reset_password }) => {
   if (requestSent) {
     return( 
       <>
-        <TopMessage message="An email has been sent to you for changing your password" />
+        <TopMessage message="An email has been sent to you for changing your password." />
         <Redirect to="/sign_in" />
       </>
     );
@@ -34,6 +34,7 @@ const ResetPassword = ({ reset_password }) => {
 
   return (
     <>
+    <title>YourHealthPal-Reset password</title>
       <div className="flex">
         <div className="sign-in-container">
           <div className="h-2 bg-blue-400 rounded-t-md" />

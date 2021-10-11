@@ -39,7 +39,6 @@ function App() {
   });
   return (
     <>
-      <title>Healthify</title>
       <Provider store={store}>
         <Router>
           <div className="flex flex-col justify-between min-h-screen ">
@@ -47,7 +46,9 @@ function App() {
               <link rel="icon" href="assets/images/logo.png" />
               <Switch>
                 {/* Normal Pages */}
-                <Route exact path="/" />
+                <Route exact path="/" >
+                  <title>YourHealthPal</title>
+                </Route>
                 <Route exact path="/discussion">
                   <DiscussionDisplay posts={posts} />
                 </Route>

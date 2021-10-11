@@ -15,16 +15,26 @@ const Activate = ({ verify, match }) => {
   };
 
   if (verified) {
-    return <Redirect to="/" />;
+    return (
+      <>
+        <div className="sign-in-container">
+          <div className="h-2 bg-blue-400 rounded-t-md"></div>
+          <div className="flex justify-between items-baseline">
+            <p className="inset-x-auto mx-auto px-2 my-4">You are verified. You can close this tab now.</p>
+          </div>
+        </div>
+      </>
+    );
   }
   return (
     <>
+    <title>YourHealthPal-activate account</title>
       <div className="flex">
         <div className="sign-in-container">
           <div className="h-2 bg-blue-400 rounded-t-md"></div>
           <div className="flex justify-between items-baseline">
             <button
-              className="primary-btn"
+              className="inset-x-auto mx-auto primary-btn"
               type="button"
               onClick={verify_account}
             >

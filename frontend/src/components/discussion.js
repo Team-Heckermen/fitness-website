@@ -5,7 +5,7 @@ export const DiscussionDisplay = (props) => {
   var posts = props.posts
   return (
     <div className="mt-5">
-      <title>Healthify - Discussions</title>
+      <title>YourHealthPal-Discussions</title>
       {
         posts.map(post => (
           <div className="discussion-display-container w-90%">

@@ -27,16 +27,21 @@ const ResetPasswordConfirm = ({ match, reset_password_confirm }) => {
   };
 
   if (requestSent) { 
-    return( 
-    <>
-      <TopMessage message="Password changed successfully!" />
-        <Redirect to="/sign_in" />
-    </>
+    return (
+      <>
+        <div className="sign-in-container">
+          <div className="h-2 bg-blue-400 rounded-t-md"></div>
+          <div className="flex justify-between items-baseline">
+            <p className="inset-x-auto mx-auto my-4 px-8">Password changed successfully! You can close this tab now.</p>
+          </div>
+        </div>
+      </>
     );
 }
 
   return (
     <div className="flex">
+    <title>YourHealthPal-Reset password</title>
       <div className="sign-in-container">
         <div className="h-2 bg-blue-400 rounded-t-md"></div>
         <form className="px-8 py-6" onSubmit={(e) => onSubmit(e)}>
