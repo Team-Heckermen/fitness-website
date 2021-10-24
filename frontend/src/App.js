@@ -6,7 +6,7 @@ import { Footer } from "./components/Footer";
 import ResetPassword from "./components/ResetPassword";
 import ResetPasswordConfirm from "./components/ResetPasswordConfirm";
 import Activate from "./components/Activate";
-import { DiscussionDisplay } from "./components/Discussion";
+import { DiscussionDisplay } from "./components/discussion";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import { Provider } from "react-redux";
