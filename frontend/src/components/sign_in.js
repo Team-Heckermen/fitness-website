@@ -34,7 +34,7 @@ const Sign_in = ({ login, isAuthenticated }) => {
 
   return (
     <>
-      <title>YourHealthPal - Sign in</title>
+    <title>YourHealthPal - Sign in</title>
       <div className="flex">
         <div className="sign-in-container">
           <div className="h-2 bg-blue-400 rounded-t-md"></div>

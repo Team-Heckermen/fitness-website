@@ -12,6 +12,7 @@ import Layout from "./Layout/Layout";
 import { Provider } from "react-redux";
 import store from "./store";
 import PageNotFound from "./components/PageNotFound";
+import TopMessage from "./components/message";
 
 // dummy data
 var posts = [
@@ -42,6 +43,7 @@ function App() {
       <Provider store={store}>
         <Router>
           <div className="flex flex-col justify-between min-h-screen ">
+            <TopMessage message="nang"/>
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />
               <Switch>

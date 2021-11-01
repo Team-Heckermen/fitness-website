@@ -28,7 +28,7 @@ const Activate = ({ verify, match }) => {
   }
   return (
     <>
-    <title>YourHealthPal-activate account</title>
+    <title>YourHealthPal - activate account</title>
       <div className="flex">
         <div className="sign-in-container">
           <div className="h-2 bg-blue-400 rounded-t-md"></div>

@@ -34,7 +34,7 @@ const ResetPassword = ({ reset_password }) => {
 
   return (
     <>
-    <title>YourHealthPal-Reset password</title>
+    <title>YourHealthPal - Reset password</title>
       <div className="flex">
         <div className="sign-in-container">
           <div className="h-2 bg-blue-400 rounded-t-md" />
