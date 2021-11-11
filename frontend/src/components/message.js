@@ -1,13 +1,55 @@
 import React, { useState, useEffect } from "react";
 import cross from "../assets/images/cross.svg";
-
-const TopMessage = (message, isAuthenticated) => {
-  const [Open, setOpen] = useState(true);
-
+import { connect } from "react-redux";
+var message = "";
+const TopMessage = ({ resetRequestSent, signinSuccess, signupSuccess, logoutSuccess, activationSuccess }) => {
+  const [Open, setOpen] = useState(false);
+  const [Rrs, setRrs] = useState(true);
+  const [Sis, setSis] = useState(true);
+  const [Sus, setSus] = useState(true);
+  const [Ls, setLs] = useState(true);
+  const [As, setAs] = useState(true);
+  
+  const setopentrue = (open) => {
+    if(open != true)
+    {
+      setOpen(true);
+    }
+  }
   const toggle = () => {
-    setOpen(!Open);
+    message = "";
+    setOpen(false);
   };
-  if(message != null)
+
+  if(resetRequestSent && Rrs)
+  {
+    message = "An email has been sent to you for changing your password.";
+    setRrs(false);
+    setopentrue(Open);
+  }
+  if(activationSuccess && As)
+  {
+    message ="Your email address has been verified. Kindly sign in.";
+    setAs(false);
+    setopentrue(Open);
+  }
+  if(signinSuccess && Sis){
+    message ="Signed in successfully. Welcome back!";
+    setSis(false);
+    setopentrue(Open);
+  }
+  if(signupSuccess && Sus){
+    message ="An email has been sent to you for verifing your email address.";
+    setSus(false);
+    setopentrue(Open);
+  }
+  if(logoutSuccess && Ls){
+    message ="Logged out successfully. See you later!";
+    setLs(false);
+    setopentrue(Open);
+  }
+
+  if(message != "")
   {
     return (
       <div className={
@@ -30,6 +72,11 @@ const TopMessage = (message, isAuthenticated) => {
 };
 
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated,
+  resetRequestSent: state.auth.resetRequestSent,
+  resetConfirmSuccess: state.auth.resetConfirmSuccess,
+  signinSuccess: state.auth.signinSuccess,
+  signupSuccess: state.auth.signupSuccess,
+  logoutSuccess: state.auth.logoutSuccess,
+  activationSuccess: state.auth.activationSuccess,
 });
 export default connect(mapStateToProps, null)(TopMessage);

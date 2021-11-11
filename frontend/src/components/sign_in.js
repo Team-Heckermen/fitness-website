@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../actions/auth.js";
-import { TopMessage } from "./message.js";
 
 const Sign_in = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -23,10 +22,8 @@ const Sign_in = ({ login, isAuthenticated }) => {
 
   // is the user authenticated? yes then redirect to homepage
   if (isAuthenticated) {
-    console.log("signed in");
     return (
       <>
-        <TopMessage message="Signed in successfully!" />
         <Redirect to="/" />
       </>
     );

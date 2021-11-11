@@ -43,7 +43,7 @@ function App() {
       <Provider store={store}>
         <Router>
           <div className="flex flex-col justify-between min-h-screen ">
-            <TopMessage message="nang"/>
+            <TopMessage/>
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />
               <Switch>
