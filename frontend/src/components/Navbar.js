@@ -37,13 +37,13 @@ const Navbar = ({ toggle, logout, isAuthenticated }) => {
   };
   return (
     <div>
-      <nav className="flex justify-between items-center h-14 text-black relative">
+      <nav className="flex justify-between items-center text-black relative">
         {/* Logo, home, discussion and settings button */}
         <div className="flex items-center">
           <Link to="/" className="ml-3">
-            <img src={logo} className="ml-4 py-2 w-11 mr-0" />
+            <img src={logo} className="ml-4 w-11 mr-0" />
           </Link>
-          <div className="pr-8 md:block hidden my-2 mx-5">
+          <div className="pr-8 md:block hidden mx-5">
             <Link className="navbar-link" to="/">
               <button className="underline-btn">Home</button>
             </Link>

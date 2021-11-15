@@ -55,12 +55,12 @@
 
 .underline-btn {
   @apply bg-white rounded-lg px-4;
-  margin-top: 19px;
+  margin-top: 13px;
 }
 
 .underline-btn::after{
   @apply mx-auto;
-  margin-top: 12px;
+  margin-top: 13px;
   content: '';
   display:flex;
   height: 5px;
