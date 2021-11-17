@@ -27,6 +27,7 @@ const initialState = {
   logoutSuccess: null,
   activationSuccess: null,
   user: null,
+  wrongLoginCredentials: null,
 };
 
 export default function (state = initialState, action) {
@@ -70,6 +71,16 @@ export default function (state = initialState, action) {
         user: null,
       };
     case LOGIN_FAIL:
+      localStorage.removeItem("access");
+      localStorage.removeItem("refresh");
+      return {
+        ...state,
+        access: null,
+        refresh: null,
+        isAuthenticated: false,
+        wrongLoginCredentials: true,
+        user: null,
+      };
     case SIGNUP_FAIL:
       localStorage.removeItem("access");
       localStorage.removeItem("refresh");
@@ -92,20 +103,20 @@ export default function (state = initialState, action) {
         logoutSuccess: true,
       };
     case PASSWORD_RESET_SUCCESS:
-      return{
+      return {
         ...state,
         resetRequestSent: true,
-      }
+      };
     case PASSWORD_RESET_CONFIRM_SUCCESS:
-      return{
+      return {
         ...state,
         resetConfirmSuccess: true,
-      }
+      };
     case ACTIVATION_SUCCESS:
-      return{
+      return {
         ...state,
         activationSuccess: true,
-      }
+      };
     case PASSWORD_RESET_CONFIRM_FAIL:
     case PASSWORD_RESET_FAIL:
     case ACTIVATION_FAIL:
