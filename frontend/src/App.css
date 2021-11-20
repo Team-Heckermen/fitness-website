@@ -77,3 +77,12 @@
   position: fixed;
   z-index: 100;
 }
+
+.settings-container{
+  @apply w-90% h-4/6 py-3 mx-auto bg-white rounded-xl shadow-md overflow-hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

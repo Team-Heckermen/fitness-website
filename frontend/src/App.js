@@ -13,6 +13,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import PageNotFound from "./components/PageNotFound";
 import TopMessage from "./components/message";
+import { Settings } from "./components/settings";
 
 // dummy data
 var posts = [
@@ -56,7 +57,7 @@ function App() {
                 </Route>
                 <Route exact path="/sign_in" component={Sign_in} />
                 <Route exact path="/sign_up" component={Sign_up} />
-                <Route exact path="/settings" />
+                <Route exact path="/settings" component={Settings}/>
                 <Route exact path="/reset-password" component={ResetPassword} />
                 <Route
                   exact
