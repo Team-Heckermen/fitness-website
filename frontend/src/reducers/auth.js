@@ -118,6 +118,11 @@ export default function (state = initialState, action) {
         activationSuccess: true,
       };
     case PASSWORD_RESET_CONFIRM_FAIL:
+      return {
+        ...state,
+        resetConfirmSuccess: false,
+      };
+
     case PASSWORD_RESET_FAIL:
     case ACTIVATION_FAIL:
       return {
