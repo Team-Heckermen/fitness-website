@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import defaultImg from "../assets/images/default_user_img.svg";
 import { Link, Redirect } from "react-router-dom";
 
-export const Settings = () => {
+export const Account = () => {
 
   const uploadedImage = React.useRef(null);
   const imageUploader = React.useRef(null);
@@ -25,9 +25,9 @@ export const Settings = () => {
   var email = "email of the user";
   return (
     <>
-    <title>YourHealthPal - Settings</title>
+    <title>YourHealthPal - profile</title>
       <div className="flex">
-        <div className="settings-container">
+        <div className="profile-container">
           <div className="h-2 bg-blue-400 rounded-t-md"></div>
           <form className="px-8 py-6">
             <label className="block font-semibold">Email</label>
@@ -80,4 +80,4 @@ export const Settings = () => {
 
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<Settings />, rootElement);
+ReactDOM.render(<Account />, rootElement);
