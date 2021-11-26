@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 var message = "";
 const TopMessage = ({
   resetRequestSent,
+  resetConfirmSuccess,
   signinSuccess,
   signupSuccess,
   wrongLoginCredentials,
@@ -13,6 +14,7 @@ const TopMessage = ({
   const [Open, setOpen] = useState(false);
   const [Rrs, setRrs] = useState(true);
   const [loginIncorrect, setLoginIncorrect] = useState(true);
+  const [passwordResetSuccess, setPasswordResetSuccess] = useState(true);
   const [Sis, setSis] = useState(true);
   const [Sus, setSus] = useState(true);
   const [Ls, setLs] = useState(true);
@@ -33,6 +35,18 @@ const TopMessage = ({
     setRrs(false);
     setopentrue(Open);
   }
+
+  if (resetConfirmSuccess && passwordResetSuccess) {
+    message = "Your password has been changed successfully.";
+    setPasswordResetSuccess(false);
+    setopentrue(Open);
+  } else if (resetConfirmSuccess === false && passwordResetSuccess) {
+    message =
+      "There is some error either in the link or the password you entered. Try again";
+    setPasswordResetSuccess(false);
+    setopentrue(Open);
+  }
+
   if (activationSuccess && As) {
     message = "Your email address has been verified. Kindly sign in.";
     setAs(false);
