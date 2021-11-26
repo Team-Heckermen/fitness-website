@@ -47,9 +47,6 @@ const Navbar = ({ toggle, logout, isAuthenticated }) => {
             <Link className="navbar-link" to="/">
               <button className="underline-btn">Home</button>
             </Link>
-            <Link className="navbar-link" to="/discussion">
-              <button className="underline-btn">Discussion</button>
-            </Link>
             <Link className="navbar-link" to="/settings">
               <button className="underline-btn">Settings</button>
             </Link>

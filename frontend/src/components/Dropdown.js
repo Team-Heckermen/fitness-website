@@ -18,12 +18,6 @@ export const Dropdown = (props) => {
 
         <hr className="my-1.5 w-90% mx-auto border-gray-500" />
 
-        <Link className="p-1" to="/discussion">
-          Discussion
-        </Link>
-
-        <hr className="my-1.5 w-90% mx-auto border-gray-500" />
-
         <Link className="p-1" to="/settings">
           Settings
         </Link>

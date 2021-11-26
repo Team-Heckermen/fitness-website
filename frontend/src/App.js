@@ -6,7 +6,6 @@ import { Footer } from "./components/Footer";
 import ResetPassword from "./components/ResetPassword";
 import ResetPasswordConfirm from "./components/ResetPasswordConfirm";
 import Activate from "./components/Activate";
-import { DiscussionDisplay } from "./components/discussion";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import { Provider } from "react-redux";
@@ -15,13 +14,6 @@ import PageNotFound from "./components/PageNotFound";
 import TopMessage from "./components/message";
 import { Account } from "./components/account";
 
-// dummy data
-var posts = [
-  ["date", "post 1 heading", "post 1 content", "author"],
-  ["date", "post 2 heading", "post 2 content", "author"],
-  ["date", "post 3 heading", "post 3 content", "author"],
-  ["date", "post 4 heading", "post 4 content", "author"],
-];
 
 function App() {
   // variable to track if navbar is open or not
@@ -51,9 +43,6 @@ function App() {
                 {/* Normal Pages */}
                 <Route exact path="/" >
                   <title>YourHealthPal</title>
-                </Route>
-                <Route exact path="/discussion">
-                  <DiscussionDisplay posts={posts} />
                 </Route>
                 <Route exact path="/sign_in" component={Sign_in} />
                 <Route exact path="/sign_up" component={Sign_up} />
