@@ -1,9 +1,28 @@
 import React from "react";
+import ReactDOM from "react-dom";
+import defaultImg from "../assets/images/default_user_img.svg";
 import { Link, Redirect } from "react-router-dom";
 
 export const Settings = () => {
+
+  const uploadedImage = React.useRef(null);
+  const imageUploader = React.useRef(null);
+
+  const handleImageUpload = e => {
+    const [file] = e.target.files;
+    if (file) {
+      const reader = new FileReader();
+      const { current } = uploadedImage;
+      current.file = file;
+      reader.onload = e => {
+        current.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   var name = "name of user";
-  var email = " email of the user";
+  var email = "email of the user";
   return (
     <>
     <title>YourHealthPal - Settings</title>
@@ -25,8 +44,30 @@ export const Settings = () => {
               placeholder={name}
               name="username"
             />
-            <div className="flex justify-between items-baseline">
-              <button className="primary-btn w-90% mx-auto" type="submit">
+            <label className="block mt-3 font-semibold">Upload a image to change your profile picture</label>
+
+            <div className=" flex flex-col">
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                ref={imageUploader}
+                style={{
+                  display: "none"
+                }}
+              />
+              <div
+                className=" h-28 w-28 border-0.5 border-dashed border-black rounded-full mt-4"
+                onClick={() => imageUploader.current.click()}
+              >
+                <img
+                  ref={uploadedImage}
+                  className="h-28 w-28 rounded-full"
+                />
+              </div>
+            </div>
+            <div className="flex justify-between items-baseline mt-4">
+              <button className="primary-btn w-90% mx-auto " type="submit">
                 update personal info
               </button>
             </div>
@@ -36,3 +77,7 @@ export const Settings = () => {
     </>
   );
 };
+
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<Settings />, rootElement);
