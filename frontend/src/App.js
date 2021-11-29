@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Layout from "./Layout/Layout";
 import { Provider } from "react-redux";
 import store from "./store";
-import PageNotFound from "./components/PageNotFound";
+import error_404 from "./components/error_404";
 import TopMessage from "./components/message";
 import { Account } from "./components/account";
 
@@ -59,7 +59,7 @@ function App() {
                   component={Activate}
                 />
                 {/* Error Pages */}
-                <Route component={PageNotFound} />
+                <Route component={error_404} />
               </Switch>
             </Layout>
             <Footer />

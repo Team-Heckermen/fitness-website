@@ -1,6 +1,6 @@
 import React from "react";
 import message from "../assets/images/404page.gif";
-const PageNotFound = () => {
+const error_404 = () => {
   var { innerWidth: width, innerHeight: height } = window;
   var mheight = height - 130;
   height = (width/16)*9;
@@ -17,4 +17,4 @@ const PageNotFound = () => {
   );
 };
 
-export default PageNotFound;
+export default error_404;

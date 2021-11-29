@@ -1,6 +1,6 @@
 import React from "react";
 import message from "../assets/images/403page.gif";
-export const NoAccess = () => {
+export const error_403 = () => {
   var { innerWidth: width, innerHeight: height } = window;
   var mheight = height - 130;
   height = (width/16)*9;
