@@ -1,7 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import defaultImg from "../assets/images/default_user_img.svg";
-import { Link, Redirect } from "react-router-dom";
 
 export const Account = () => {
 

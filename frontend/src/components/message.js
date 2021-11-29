@@ -31,7 +31,7 @@ const TopMessage = ({
   };
 
   if (resetRequestSent && Rrs) {
-    message = "An email has been sent to you for changing your password.";
+    message = "A message has been sent to you by email with instructions on how to reset your password.";
     setRrs(false);
     setopentrue(Open);
   }
