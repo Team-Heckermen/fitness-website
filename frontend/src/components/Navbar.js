@@ -10,13 +10,13 @@ import lightUserimg from "../assets/images/light-mode/default_user_img.svg";
 import DarkModeIcon from "../assets/images/dark-mode/dark-mode.png"
 import LightModeIcon from "../assets/images/light-mode/light-mode.png"
 
-import { TopMessage } from "./message";
 import { logout } from "../actions/auth";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 
 const Navbar = ({ toggle, logout, isAuthenticated }) => {
   var DarkMode = true
+
   if(DarkMode)
   {
     var Search = DarkSearch;
