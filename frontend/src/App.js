@@ -16,11 +16,14 @@ import { Account } from "./components/account";
 
 
 function App() {
-  if(true)
+  var DarkMode = true;
+  if(DarkMode)
   {
-    var body_style = ""
+    var body_style = "bg-custom"
   }
-  else{
+  else
+  {
+    var body_style = "bg-white"
   }
 
   // variable to track if navbar is open or not
@@ -42,7 +45,7 @@ function App() {
     <>
       <Provider store={store}>
         <Router>
-          <div className="bg-custom flex flex-col justify-between min-h-screen ">
+          <div className={"flex flex-col justify-between min-h-screen "+body_style}>
             <TopMessage/>
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />

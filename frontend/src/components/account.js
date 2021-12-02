@@ -2,6 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 export const Account = () => {
+  var DarkMode = true;
+  if(DarkMode)
+  {
+    var container_style = "bg-custom"
+  }
+  else
+  {
+    var container_style = "bg-white"
+  }
 
   const uploadedImage = React.useRef(null);
   const imageUploader = React.useRef(null);
@@ -25,9 +34,9 @@ export const Account = () => {
     <>
     <title>Venplore - profile</title>
       <div className="flex">
-        <div className="profile-container">
+        <div className={"profile-container "+container_style}>
           <div className="h-2 bg-blue-400 rounded-t-md"></div>
-          <form className="px-8 py-6">
+          <form className="px-8 py-6 bg-white">
             <label className="block font-semibold">Email</label>
             <input
              className="sign-in-input"
@@ -70,6 +79,7 @@ export const Account = () => {
               </button>
             </div>
           </form>
+          <div className="h-2 bg-white rounded-b-md"></div>
         </div>
       </div>
     </>

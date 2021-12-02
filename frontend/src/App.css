@@ -75,6 +75,6 @@
 }
 
 .profile-container{
-  @apply  md:h-75% md:w-96 w-90% h-auto py-3 mx-auto bg-white rounded-xl shadow-md top-3/4 overflow-hidden;
+  @apply  md:h-75% md:w-96 w-90% h-auto py-3 mx-auto rounded-xl shadow-md top-3/4 overflow-hidden;
   position: relative;
 }
