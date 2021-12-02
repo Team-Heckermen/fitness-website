@@ -49,7 +49,7 @@ function App() {
               <Switch>
                 {/* Normal Pages */}
                 <Route exact path="/" >
-                  <title>YourHealthPal</title>
+                  <title>Venplore</title>
                 </Route>
                 <Route exact path="/sign_in" component={Sign_in} />
                 <Route exact path="/sign_up" component={Sign_up} />

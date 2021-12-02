@@ -23,7 +23,7 @@ export const Account = () => {
   var email = "email of the user";
   return (
     <>
-    <title>YourHealthPal - profile</title>
+    <title>Venplore - profile</title>
       <div className="flex">
         <div className="profile-container">
           <div className="h-2 bg-blue-400 rounded-t-md"></div>

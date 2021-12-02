@@ -22,7 +22,7 @@ export const error_403 = () => {
   }
   return (
     <div>
-      <title>YourHealthPal - page not found</title>
+      <title>Venplore - page not found</title>
       <img src={Message} width={width} className="mx-auto" />
     </div>
   );

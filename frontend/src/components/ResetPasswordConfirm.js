@@ -42,7 +42,7 @@ const ResetPasswordConfirm = ({
   } else {
     return (
       <div className="flex">
-        <title>YourHealthPal - Reset password</title>
+        <title>Venplore - Reset password</title>
         <div className="sign-in-container">
           <div className="h-2 bg-blue-400 rounded-t-md"></div>
           <form className="px-8 py-6" onSubmit={(e) => onSubmit(e)}>
