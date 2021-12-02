@@ -16,6 +16,13 @@ import { Account } from "./components/account";
 
 
 function App() {
+  if(true)
+  {
+    var body_style = ""
+  }
+  else{
+  }
+
   // variable to track if navbar is open or not
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,7 +42,7 @@ function App() {
     <>
       <Provider store={store}>
         <Router>
-          <div className="flex flex-col justify-between min-h-screen ">
+          <div className="bg-custom flex flex-col justify-between min-h-screen ">
             <TopMessage/>
             <Layout>
               <link rel="icon" href="assets/images/logo.png" />

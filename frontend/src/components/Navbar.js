@@ -1,12 +1,39 @@
 import React, { useState } from "react";
 import logo from "../assets/images/logo.png";
-import search from "../assets/images/search_icon.svg";
-import userimg from "../assets/images/default_user_img.svg";
+
+import DarkSearch from "../assets/images/dark-mode/search_icon.svg";
+import LightSearch from "../assets/images/light-mode/search_icon.svg";
+
+import DarkUserimg from "../assets/images/dark-mode/default_user_img.svg";
+import lightUserimg from "../assets/images/light-mode/default_user_img.svg";
+
+import DarkModeIcon from "../assets/images/dark-mode/dark-mode.png"
+import LightModeIcon from "../assets/images/light-mode/light-mode.png"
+
 import { TopMessage } from "./message";
 import { logout } from "../actions/auth";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
+
 const Navbar = ({ toggle, logout, isAuthenticated }) => {
+  var DarkMode = true
+  if(DarkMode)
+  {
+    var Search = DarkSearch;
+    var ModeIcon = DarkModeIcon;
+    var DefaultUserImg = DarkUserimg;
+  }
+  else
+  {
+    var Search = LightSearch;
+    var ModeIcon = LightModeIcon;
+    var DefaultUserImg = lightUserimg;
+  }
+
+  const toogleModeIcon = () => (
+    DarkMode=false
+  );
+
   const [redirect, setRedirect] = useState(false);
 
   const guestLinks = () => (
@@ -61,10 +88,13 @@ const Navbar = ({ toggle, logout, isAuthenticated }) => {
             />
             <div className="p-2 py-0">
               <button className="navbar-search-btn">
-                <img src={search} height="100%" width="100%" />
+                <img src={Search} height="100%" width="100%" />
               </button>
             </div>
           </div>
+        </div>
+        <div className=" flex-grow mr-4">
+          <img src={ModeIcon} onClick={toogleModeIcon} className="w-8 h-8 float-right"/>
         </div>
         <div className="pr-3 md:block hidden">
           {isAuthenticated ? authLinks() : guestLinks()}

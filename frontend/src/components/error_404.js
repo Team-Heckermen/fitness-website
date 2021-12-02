@@ -1,6 +1,17 @@
 import React from "react";
-import message from "../assets/images/404page.gif";
+import DarkMessage from "../assets/images/dark-mode/404page.png";
+import LightMessage from "../assets/images/light-mode/404page.png";
+
 const error_404 = () => {
+  if(true)
+  {
+    var Message = DarkMessage;
+  }
+  else
+  {
+    var Message = LightMessage;
+  }
+
   var { innerWidth: width, innerHeight: height } = window;
   var mheight = height - 130;
   height = (width/16)*9;
@@ -12,7 +23,7 @@ const error_404 = () => {
   return (
     <div>
       <title>YourHealthPal - page not found</title>
-      <img src={message} width={width} className="mx-auto" />
+      <img src={Message} width={width} className="mx-auto" />
     </div>
   );
 };
